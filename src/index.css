@@ -188,6 +188,10 @@ ol {
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
   padding: 1rem;
+
+  &:disabled {
+    cursor: default;
+  }
 }
 
 #game-over {
