@@ -1,34 +1,7 @@
-// import { useState } from 'react'
-
-const initialGameBoard = [
-  [ null, null, null ],
-  [ null, null, null ],
-  [ null, null, null ]
-]
-
-export default function GameBoard({ onSelectPlayer, turns }) {
-  let gameBoard = initialGameBoard;
-
-  for ( const turn of turns ) {
-    const { square: { row, col }, player } = turn;
-    gameBoard[row][col] = player;
-  }
-
-  // const [ gameBoard, setGameBoard ] = useState(initialGameBoard)
-
-  // function handleCellClick(rowIndex, cellIndex) {
-  //   setGameBoard(prevBoard => {
-  //     const newBoard = [...prevBoard.map(row => [...row])]
-  //     newBoard[rowIndex][cellIndex] = activePlayerSymbol
-  //     return newBoard
-  //   })
-
-  //   onSelectPlayer()
-  // }
-
+export default function GameBoard({ onSelectPlayer, board }) {
   return (
     <ol id="game-board">
-      {gameBoard.map((row, rowIndex) => (
+      {board.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol, colIndex) => (
